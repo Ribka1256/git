@@ -3,87 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AhaduHub - Digital Solutions</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts for professional typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for tech icons -->
+    <title>AhaduHub UI Recreation</title>
     <link rel="stylesheet" href="Ahadu.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Header / Navigation -->
-    <header class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <i class="fas fa-microchip"></i>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#" class="active">About Us</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Main Content Section -->
     <main class="container hero-section">
-        <div class="hero-content">
-            <span class="tag">ABOUT US</span>
-            <h1>Building reliable digital systems for institutions</h1>
-            <p>
-                AhaduHub is a web development team focused on transforming outdated websites into modern, user-centered platforms.
-            </p>
-            <p>
-                We design and build clean, responsive, and scalable interfaces tailored for institutions and organizations.
-            </p>
-            <p>
-                Our goal is to deliver reliable digital solutions that improve clarity, engagement, and credibility.
-            </p>
-            
-            <div class="slider-indicators">
-                <span class="dot active"></span>
-                <span class="dot"></span>
+        <!-- Text Side -->
+        <div class="hero-text">
+            <div class="text-slider">
+                <!-- Slide 1 -->
+                <div class="text-item active">
+                    <span class="tag">ABOUT US</span>
+                    <h1>Building reliable digital systems for institutions</h1>
+                    <p>AhaduHub is a web development team focused on transforming outdated websites into modern, user-centered platforms.</p>
+                    <p>We design and build clean, responsive, and scalable interfaces tailored for institutions and organizations.</p>
+                    <p>Our goal is to deliver reliable digital solutions that improve clarity, engagement, and credibility.</p>
+                </div>
+                <!-- Slide 2 -->
+                <div class="text-item">
+                    <span class="tag">OUR TEAM</span>
+                    <h1>A growing team solving real-world problems</h1>
+                    <p>We are a growing team of developers focused on real-world problem solving through modern technologies.</p>
+                    <p>Our work is driven by continuous learning, collaboration, and hands-on development across both frontend and backend systems.</p>
+                    <p>Our goal is to build not only strong products, but also a strong foundation for innovation.</p>
+                </div>
+            </div>
+
+            <div class="indicators">
+                <span class="dot active" onclick="jumpToSlide(0)"></span>
+                <span class="dot" onclick="jumpToSlide(1)"></span>
             </div>
         </div>
 
-        <div class="hero-image">
-            <!-- Using a high-quality placeholder image of a team working -->
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800" alt="Team collaborating">
+        <!-- Image Side (THE STACK) -->
+       <div class="hero-image-area">
+    <!-- Slide 1 Group -->
+    <div class="image-group active">
+        <!-- The background card (Grayscale) -->
+        <div class="card-back">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000" alt="Back Image">
         </div>
+        <!-- The foreground card (Main Image) -->
+        <div class="card-front">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000" alt="Front Image">
+        </div>
+    </div>
+
+    <!-- Slide 2 Group -->
+    <div class="image-group">
+        <div class="card-back">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000" alt="Back Image">
+        </div>
+        <div class="card-front">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1000" alt="Front Image">
+        </div>
+    </div>
+</div>
     </main>
 
-    <!-- Tech Stack Section -->
-    <section class="tech-stack-section">
-        <h2 class="tech-title">OUR TECH STACK</h2>
-        <div class="marquee-container">
+    <section class="tech-stack">
+        <p class="section-label">OUR TECH STACK</p>
+        <div class="marquee">
             <div class="marquee-content">
-                <!-- Tech items repeated for seamless loop -->
-                <div class="tech-item"><i class="fab fa-python"></i> FastAPI</div>
-                <div class="tech-item"><i class="fas fa-database"></i> MongoDB</div>
-                <div class="tech-item"><i class="fab fa-google"></i> Flutter</div>
-                <div class="tech-item"><i class="fab fa-python"></i> Django</div>
-                <div class="tech-item"><i class="fab fa-node-js"></i> Node.js</div>
-                <div class="tech-item"><i class="fab fa-js"></i> JavaScript</div>
-                <div class="tech-item"><i class="fab fa-react"></i> React</div>
-                <div class="tech-item"><i class="fab fa-python"></i> Python</div>
-                <!-- Duplicate for marquee effect -->
-                <div class="tech-item"><i class="fab fa-python"></i> FastAPI</div>
-                <div class="tech-item"><i class="fas fa-database"></i> MongoDB</div>
-                <div class="tech-item"><i class="fab fa-google"></i> Flutter</div>
-                <div class="tech-item"><i class="fab fa-python"></i> Django</div>
-                <div class="tech-item"><i class="fab fa-node-js"></i> Node.js</div>
-                <div class="tech-item"><i class="fab fa-js"></i> JavaScript</div>
-                <div class="tech-item"><i class="fab fa-react"></i> React</div>
-                <div class="tech-item"><i class="fab fa-python"></i> Python</div>
+                <span class="tags"><i class="fab fa-python"></i> FastAPI</span>
+                <span class="tags"><i class="fas fa-database" ></i> MongoDB</span>
+                <span class="tags"><i class="fab fa-google" ></i> Flutter</span>
+                <span class="tags"><i class="fab fa-python" ></i> Django</span>
+                <span class="tags"><i class="fab fa-node-js" ></i> Node.js</span>
+                <span class="tags"><i class="fab fa-js" ></i> JavaScript</span>
+                <span class="tags"><i class="fab fa-react" ></i> React</span>
+                <span class="tags"><i class="fab fa-python"></i> Python</span>
+                <!-- Duplicate for seamless loop -->
+                <span class="tags"><i class="fab fa-python" ></i> FastAPI</span>
+                <span class="tags"><i class="fas fa-database"></i> MongoDB</span>
+                <span class="tags"><i class="fab fa-google"></i> Flutter</span>
+                <span class="tags"><i class="fab fa-python" ></i> Django</span>
+                <span class="tags"><i class="fab fa-node-js"></i> Node.js</span>
+                <span class="tags"><i class="fab fa-js" ></i> JavaScript</span>
+                <span class="tags"><i class="fab fa-react"></i> React</span>
+                <span class="tags"><i class="fab fa-python" ></i> Python</span>
             </div>
         </div>
     </section>
+    <div class="text-item2 active">
+                    <span class="tag2">PROCESS</span>
+                    <h1>A Simple Process to Improve Your Website</h1>
+                    <p>A clear, structured approach to identify problems and deliver effective solutions.</p>
+              </div>
+<section class="process-section">
+    <div class="container">
+        <!-- Header -->
+        <!-- Timeline Content -->
+        <div class="process-container">
+            
+            <!-- Step 01 -->
+            <div class="process-step">
+                <div class="icon-wrapper">
+                    <div class="icon-box">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="process-card">
+                    <span class="step-number">STEP 01</span>
+                    <h3>Analyze & Understand</h3>
+                    <p>We review your current website and identify key usability and design issues.</p>
+                </div>
+                
+            </div>
 
+            <!-- Step 02 -->
+            <div class="process-step">
+                <div class="icon-wrapper">
+                    <div class="icon-box">
+                        <i class="fas fa-th-large"></i>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="process-card">
+                    <span class="step-number">STEP 02</span>
+                    <h3>Plan & Structure</h3>
+                    <p>We design a clear layout and user flow tailored to your audience.</p>
+                </div>
+            </div>
+
+            <!-- Step 03 -->
+            <div class="process-step">
+                <div class="icon-wrapper">
+                    <div class="icon-box">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="line"></div>
+                </div>
+                <div class="process-card">
+                    <span class="step-number">STEP 03</span>
+                    <h3>Design & Develop</h3>
+                    <p>We build a responsive, clean, and modern interface using best practices.</p>
+                </div>
+            </div>
+
+            <!-- Step 04 -->
+            <div class="process-step">
+                <div class="icon-wrapper">
+                    <div class="icon-box">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                </div>
+                <div class="process-card">
+                    <span class="step-number">STEP 04</span>
+                    <h3>Deliver & Improve</h3>
+                    <p>We launch your site and ensure it performs smoothly across all devices.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+    <script src="Ahadu.js"></script>
 </body>
 </html>
