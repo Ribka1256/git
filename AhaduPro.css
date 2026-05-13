@@ -1,0 +1,213 @@
+:root {
+    --primary-blue: #3b82f6;
+    --text-dark: #111827;
+    --text-light: #6b7280;
+    --card-border: #e5e7eb;
+}
+
+body { font-family: 'Inter', sans-serif; background-color: #ffffff; margin: 0; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* Navigation Arrows */
+.nav-arrows { gap: 10px; display: inline-flex; }
+.custom-nav {
+    border: 1px solid var(--card-border);
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.display{
+     opacity: 1;
+    transform: translateY(-12px) scale(1.02);
+    border-color: var(--primary-blue);
+    box-shadow: 0 40px 50px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+h2{
+    font-size: 40px; line-height: 1.2; margin-bottom: 15px; font-weight: 500; 
+}
+.custom-nav:hover { background: var(--primary-blue); color: white; border-color: var(--primary-blue); }
+
+/* Indicators */
+.indicators { 
+    display: flex; 
+    gap: 8px; 
+    margin-top: 20px; 
+    justify-content: flex-start; /* Alignment */
+}
+
+.dot { 
+    width: 30px; 
+    height: 5px; 
+    background: #e5e7eb; /* Gray for inactive */
+    border-radius: 10px; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+}
+
+/* Blue for active - this is what "moves" */
+.dot.active { 
+    background: #3b82f6; 
+    width: 45px; /* Makes the active dot longer like the video */
+}
+
+/* Slider Logic */
+/* --- FIXED CSS SECTION --- */
+
+#swiper {
+    width: 100%;
+    /* 1. Allow manual scrolling */
+    overflow-x: auto; 
+    /* 2. Enable snapping so cards land perfectly */
+    scroll-snap-type: x mandatory; 
+    /* 3. Smooth scrolling behavior */
+    scroll-behavior: smooth;
+    
+    /* Hide scrollbar for Chrome/Safari */
+    -webkit-overflow-scrolling: touch;
+    padding: 40px 40px;
+}
+
+#swiper::-webkit-scrollbar {
+    display: none; /* Hide scrollbar while keeping functionality */
+}
+
+#cardWrapper {
+    display: flex;
+    gap: 60px;
+    width: max-content; /* Ensure the belt is long enough */
+}
+.swiper-wrapper {
+    display: flex; /* Keeps cards in a side-by-side line */
+    gap: 180px;     /* The gap used in your JS math */
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+#cardWrapper {
+     display: flex;
+    gap: 70px; /* This MUST match the 60 in the 660 math */
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.project-card {
+     flex-shrink: 0;
+    width: 700px;
+    height: 400px;
+    padding: 50px;
+    border-radius: 24px;
+    border: 1px solid var(--card-border);
+    background-color: transparent; /* Faded/No background */
+    opacity: 0.4;                  /* Dimmed */
+    transform: scale(0.95);     
+      scroll-snap-align: start;  /* Slightly smaller */
+    transition: all 0.5s ;
+}
+.project-card.display {
+    background-color: white;       /* Solid white background */
+    opacity: 1;                    /* Full visibility */
+    transform: scale(1.02) translateY(-10px); /* Pops up and grows */
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1); /* Deep shadow like photo */
+    border-color: var(--primary-blue);
+    z-index: 10;
+}
+
+.swiper-slide{
+    display: inline-block;
+    padding: 16px 26px;
+    height: 300px;
+     flex-shrink: 0; /* Prevents the 600px from shrinking */
+    width: 600px;
+}
+/* Rest of your hover effects and tags stay exactly the same */
+
+/* Focused Focus Effect (Dimming) */
+.swiper-wrapper:hover .project-card { opacity: 0.4; transform: scale(0.98); }
+.swiper-wrapper .project-card:hover {
+    opacity: 1;
+    transform: translateY(-12px) scale(1.02);
+    border-color: var(--primary-blue);
+    box-shadow: 0 40px 50px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+.section-tag{
+     display: inline-block;
+    padding: 6px 16px;
+    border: 1px solid #b8cdf8;
+    color: #7599f3;
+    border-radius: 50px; /* Pill shape */
+    font-size: 12px;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+/* Expanding Underline */
+.project-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0; left: 25px; right: 25px;
+    height: 4px;
+    box-shadow: 0 2px 4px rgba(255, 0, 0, 0.3);
+    background: var(--primary-blue);
+    border-radius: 10px 10px 0 0;
+    transform: scaleX(0);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.project-card:hover::after { transform: scaleX(1); align-items: center;}
+
+/* Text Content */
+.project-type { color: #6e97ff; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.project-card h3 { font-size: 28px; font-weight: 100; margin: 15px 0; }
+.project-desc { color: var(--text-light); line-height: 1.7; margin-bottom: 20px; }
+
+/* Tech Tags */
+.tech-tags { display: flex; gap: 10px; margin-top: auto; }
+.TT { padding: 6px 14px; border: 1px solid var(--card-border); border-radius: 18px; font-size: 12px; transition: 0.3s; }
+.TT:hover { border-color: var(--primary-blue); color: var(--primary-blue); }
+.projects-footer {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 50px;
+gap: 30px;
+padding-top: 30px;
+}
+.view-projects-btn {
+background-color: var(--primary-blue);
+color: #ffffff;
+text-decoration: none;
+font-size: 14px;
+font-weight: 600;
+padding: 14px 32px;
+border-radius: 50px;
+display: flex;
+align-items: center;
+gap: 10px;
+transition: 0.3s;
+}
+.card-icons i{
+    border: 1px solid gray;
+    align-items: center;
+    padding: 7px 7px;
+    border-radius: 10px;
+    gap:20px ;
+}
+.view-projects-btn:hover { background-color: #2563eb; }
+.card-top {
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: relative;
+margin-bottom: 10px;
+
+}
+/* Mobile */
+@media (max-width: 768px) {
+    .project-card { width: 85vw; padding: 30px; height: auto; }
+    .swiper-wrapper { gap: 20px; }
+}

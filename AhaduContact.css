@@ -1,0 +1,255 @@
+:root {
+--brand-blue:     #1e6bff;
+  --brand-blue-dk:  #0747d8; 
+  --text-primary:   #111111;
+  --text-secondary: #444444;
+  --bg-white:       #ffffff;
+  --text-input:    #a3a3a3;
+}
+
+.contact-list {
+    flex: 10; /* Takes 50% width */
+    max-width: 1700px;
+  margin-top:40px;
+  flex-direction: column;
+    display: inline-flex;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.contact-form-container{
+    flex: 10; /* Takes 50% width */
+    max-width: 1700px;
+}
+.contact-layout {
+    max-width: 2000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px; /* Space between columns */
+}
+/* Card Container */
+.contact-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 30px;
+    border: 1px solid var(--brand-blue-dk);
+    border-radius: 25px;
+    background: #ffffff;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+    border-color: var(--brand-blue);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+/* Left Content Area */
+.card-left {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Recommended Badge */
+.badge {
+    position: absolute;
+    top: -12px;
+    left: 30px;
+    background: var(--brand-blue);
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 4px 14px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+}
+/* Icon Circles */
+.icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* Brand Icons (Left) */
+.main-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--bg-white);
+    color: var(--brand-blue);
+    font-size: 22px;
+}
+
+/* Arrow Icon (Right) */
+.arrow-icon {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--brand-blue-dk);
+    color: var(--text-primary);
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+/* Rotate the arrow to be diagonal like the photo */
+.arrow-icon i {
+    transform: rotate(-45deg);
+}
+
+.contact-card:hover .arrow-icon  {
+    background: var(--brand-blue);
+    border-color: var(--brand-blue);
+    color: #ffffff;
+}
+.contact-card:hover .main-icon {
+    background: var(--brand-blue);
+    border-color: var(--brand-blue);
+    color: #ffffff;
+}
+
+/* Text Content */
+.card-text h3 {
+    font-size: 22px;
+    color: var(--text-primary);
+    margin: 0 0 5px 0;
+    font-weight: 600;
+}
+
+.card-text p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Responsive */
+
+/* Card Container */
+.form-card {
+    background: var(--bg-white);
+    width: 100%;
+    max-width: 700px;
+    margin-top: 40px;
+    padding: 50px;
+    border-radius: 30px;
+    border: 1px solid var(--brand-blue-dk);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+}
+
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 24px;
+}
+
+/* Labels: Small, Gray, Uppercase */
+label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-input);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+/* Inputs, Select, Textarea */
+input, select, textarea {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 15px;
+    border: 1px solid var(--text-secondary);
+    border-radius: 12px;
+    color: var(--text-input);
+    background-color: #fff;
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--border-color);
+}
+
+/* Focus States */
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* Select Styling */
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23475569'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+    background-size: 16px;
+    cursor: pointer;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--brand-blue);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px; /* Pill shape */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #1d4ed8;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+/* Footer Note */
+.footer-note {
+    text-align: center;
+    font-size: 13px;
+    color: #64748b;
+    margin-top: 25px;
+}
+@media (max-width: 992px) {
+    /* 1. Fix for the About Section Boxes (Wear Your Story, etc.) */
+    .contact-layout {
+        flex-direction: column !important; /* Forces them to stack vertically */
+        align-items: center !important;
+        gap: 20px;
+    }
+
+    .contact-list {
+        width: 95% !important; /* Makes boxes take up full screen width */
+        max-width: 100% !important;
+        height: auto !important; /* Allows box to grow with text */
+        margin: 10px auto;
+        overflow: visible; /* Prevents text from being cut off */
+    }
+     .contact-form-container {
+        width: 95% !important; /* Makes boxes take up full screen width */
+        max-width: 100% !important;
+        height: auto !important; /* Allows box to grow with text */
+        margin: 10px auto;
+        overflow: visible; /* Prevents text from being cut off */
+    }
+}

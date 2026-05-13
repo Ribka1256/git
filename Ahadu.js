@@ -32,8 +32,10 @@ let slideTimer;
 function startTimer() {
     slideTimer = setInterval(() => {
         showSlide(currentIndex + 1);
-    }, 20000);
+    }, 18000);
 }
 
 // Init
 startTimer();
+
+
