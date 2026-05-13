@@ -20,7 +20,8 @@
 body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); height: 100vh; 
      /* Prevents scrolling */
     display: flex;
-    flex-direction: column; }
+    flex-direction: column; 
+}
 .container { width: 1300px; height: 1000px; margin: 0 auto; padding: 0 20px; }
 
 /* Navbar */
@@ -323,30 +324,32 @@ h3{
 
 @media (max-width: 768px) {
     body { 
-        overflow-y: auto; 
-        height: auto; 
-        display: block; 
-    }
+        overflow-y: auto !important; 
+        height: auto !important; 
+        display: block !important;
+        overflow-x: hidden !important; 
+    } 
 
     .container { 
         width: 100% !important; 
         max-width: 100% !important;
-        height: auto !important; 
-        padding: 0 20px; 
+        padding: 0 20px !important; 
+        
     }
 
     .hero-section {
-        flex-direction: column;
-        align-items: center; 
-        text-align: center; /* Centered looks better for mobile hero */
-        padding: 40px 10px;
-        gap: 40px; /* Space between text and image */
+      flex-direction: column !important;
+        align-items: center !important; 
+        text-align: center !important;
+        padding: 40px 10px !important;
+        gap: 20px !important; /* Space between text and image */
     }
 
     .hero-text { 
-        width: 100%; 
-        max-width: 100%; 
-        order: 1; /* Text stays on top */
+        width: 100% !important; 
+        max-width: 100% !important;
+        text-align: left !important; /* Text stays on top */
+        padding: 20px;
     }
 
     .text-slider {
@@ -360,57 +363,83 @@ h3{
     }
 
     /* --- THE IMAGE AREA FIX --- */
-    .hero-image-area { 
+    /* 1. Reset container to a normal phone height */
+    /* 1. Fix the massive height and margin */
+      .hero-image-area {  
         width: 100% !important; 
-        height: 350px !important; /* Force a height so absolute cards show up */
-        margin-top: 20px;
-        order: 2; /* Image stays below text */
-        position: relative;
-        display: flex;
+        height: 480px !important; /* Fixed height to contain the full stack */
+        margin-top: 20px !important;
+        margin-bottom: 120px !important; /* CRITICAL: Large margin pushes 'Tech Stack' down */
+        position: relative !important;
+        display: flex !important;
         justify-content: center;
-        align-items: center;
+        order: 2;
     }
 
+    /* Ensure the active group fills the area and is visible */
     .image-group.active {
         display: block !important;
         opacity: 1 !important;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        padding: 0px !important; /* Optional: Adds padding for better mobile look */
     }
 
-    /* Positioning the stack for narrow screens */
-    .card-back { 
-        width: 80% !important; 
+    /* 4. Positioning the Cards */
+ .card-back { 
+        width: 85% !important; 
         height: 80% !important; 
         top: 0 !important; 
         right: 0 !important; 
-        position: absolute;
-        z-index: 1;
+        position: absolute !important;
+        z-index: 1 !important;
+        background-color: #f3f4f6 !important;
+        border-radius: 20px !important;
     }
 
     .card-front { 
-        width: 80% !important; 
+        width: 85% !important; 
         height: 80% !important; 
         bottom: 0 !important; 
         left: 0 !important; 
-        position: absolute;
-        z-index: 2;
-        background: white; /* Ensure visibility */
-        padding: 8px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        position: absolute !important;
+        z-index: 2 !important;
+        background: white !important;
+        padding: 10px !important; 
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+        border-radius: 20px !important;
     }
 
-    /* Ensure the actual images fill the cards */
     .card-back img, .card-front img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 15px;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        border-radius: 15px !important;
     }
 
-    /* ... Rest of your process and tech stack code ... */
-    .indicators { justify-content: center; }
+    /* 4. Sections below the image */
+    .tech-stack {
+        margin-top: 50px !important;
+        position: relative !important;
+        clear: both !important;
+    }
+
+    /* 5. Process Section Fix */
+    .process-container {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
+        width: 100% !important;
+    }
+
+    .process-step {
+        width: 100% !important;
+        max-width: 500px !important;
+        margin-bottom: 20px !important;
+    }
+    
 }
