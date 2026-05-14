@@ -93,9 +93,9 @@ body {
 
 /* Team Grid */
 .team-grid {
-    display: flex;          /* Changed from inline-flex */
+    display: inline-flex;          /* Changed from inline-flex */
     justify-content: center; /* Centers cards horizontally */
-    align-items: flex-end;  /* Aligns cards to the bottom (good for overlapping heads) */
+    align-items: center;  /* Aligns cards to the bottom (good for overlapping heads) */
     gap: 60px;
     width: 100%;            /* Ensures container spans the whole page */
     padding: 100px 0;       /* Space for the heads and bottom shadow */

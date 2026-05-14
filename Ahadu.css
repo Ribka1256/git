@@ -159,7 +159,6 @@ p { color: #4b5563; line-height: 1.6; margin-bottom: 10px; font-size: 15px; }
     font-size: 15px;
     font-weight: 600;
     color: #555;
-    background: white;
     padding: 10px 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.03);
@@ -184,7 +183,6 @@ p { color: #4b5563; line-height: 1.6; margin-bottom: 10px; font-size: 15px; }
 
 .process-section {
     padding: 40px 10px;
-    background-color: #ffffff;
     font-family: 'Inter', sans-serif;
     text-align: left;
 }
