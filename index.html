@@ -385,10 +385,343 @@
     </section>
 
     </section>
-      <section class="demo-section" id="projects"><h2>Projects</h2></section>
-      <section class="demo-section" id="team"><h2>Team</h2></section>
+      <section class="demo-section" id="projects">    <section class="projects-section">
+      <div class="container">
+        <!-- Header -->
+        <div class="projects-header">
+          <div class="header-text">
+            <span class="section-tag">PROJECTS</span>
+            <h1>Selected Projects</h1>
+            <p>
+              A look at recent client work — structured digital systems built
+              for institutions and growing companies.
+            </p>
+          </div>
+          <div class="nav-arrows">
+            <button class="swiper-button-prev custom-nav" onclick="preProject()">
+              <i class="fas fa-arrow-left"></i>
+            </button>
+            <button class="swiper-button-next custom-nav" onclick="nextProject()">
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Slider Window -->
+        <div class="projects-swiper" id="swiper">
+          <!-- The moving belt -->
+          <div class="swiper-wrapper" id="cardWrapper">
+            <!-- Project Card 1 -->
+             <div class="cards" >
+            <div class="swiper-slide project-card"  >
+              <div class="card-top">
+                <span class="project-type">INSTITUTIONAL WEBSITE</span><br />
+                <div class="card-icons">
+                  <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                  <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+              <h3>Ethio-Nug Edible Oil</h3>
+              <p class="project-desc">
+                A clean, structured institutional website with improved content
+                hierarchy, accessibility, and credibility — built to elevate
+                brand presence online.
+              </p>
+              <p class="client-info">
+                Delivered for a local edible-oil manufacturer
+              </p>
+              <div class="tech-tags">
+                <span class="TT">React</span>
+                <span class="TT">Tailwind</span>
+                <span class="TT">Node.js</span>
+                <span class="TT">MongoDB</span>
+              </div>
+            </div>
+</div>
+<div class="cards" >
+            <!-- Project Card 2 -->
+            <div class="swiper-slide project-card">
+              <div class="card-top">
+                <span class="project-type">CORPORATE WEBSITE</span>
+                <div class="card-icons">
+                  <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                  <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+              <h3>Negra Edible Oil</h3>
+              <p class="project-desc">
+                A modern corporate website with responsive layout and refined
+                brand presentation, built for long-term maintainability and
+                growth.
+              </p>
+              <p class="client-info">
+                Delivered for a regional manufacturing company
+              </p>
+              <div class="tech-tags">
+                <span class="TT">Next.js</span>
+                <span class="TT">React</span>
+                <span class="TT">Tailwind</span>
+                <span class="TT">Vercel</span>
+              </div>
+            </div>
+</div>
+            <!-- Project Card 3 -->
+             <div class="cards" >
+            <div class="swiper-slide project-card" >
+              <div class="card-top">
+                <span class="project-type">LEARNING PLATFORM</span>
+                <div class="card-icons">
+                  <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                  <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+              <h3>LearnHub Academy</h3>
+              <p class="project-desc">
+                A full-stack learning platform supporting course management,
+                progress tracking, and structured content delivery for online
+                students.
+              </p>
+              <p class="client-info">
+                Delivered for a private training organization
+              </p>
+              <div class="tech-tags">
+                <span class="TT">React</span>
+                <span class="TT">FastAPI</span>
+                <span class="TT">PostgreSQL</span>
+                <span class="TT">Tailwind</span>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Indicators -->
+        <div class="indicators">
+          <span class="dot" onclick="showProjectSlide(0)"></span>
+          <span class="dot" onclick="showProjectSlide(1)"></span>
+          <span class="dot" onclick="showProjectSlide(2)"></span>
+        </div>
+
+        <!-- Footer -->
+        <div class="projects-footer">
+          <a href="#" class="view-projects-btn">
+            View All The Projects <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section></section>
+      <section class="demo-section" id="team">    <section class="team-section">
+    <div class="container">
+        <!-- Section Header -->
+        <div class="team-header">
+            <span class="tag">TEAM</span>
+            <h1>The Minds Behind AhaduHub</h1>
+            <p>A focused team building modern, reliable, and user-centered digital experiences.</p>
+        </div>
+
+        <!-- Value Badges -->
+        <div class="value-badges">
+            <div class="value-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Real Project Experience</span>
+            </div>
+            <div class="value-item">
+                <i class="fas fa-users-cog"></i>
+                <span>Collaborative Workflow</span>
+            </div>
+            <div class="value-item">
+                <i class="fas fa-laptop-code"></i>
+                <span>Modern Tech Stack</span>
+            </div>
+            <div class="value-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>Reliable Delivery</span>
+            </div>
+        </div>
+
+        <!-- Team Grid -->
+        <div class="team-grid">
+            <!-- Member 1 -->
+            <div class="team-card">
+                <div class="image-wrapper">
+                    <img src="image.png" alt="Ribka Mafito Mamo">
+                </div>
+                <div class="team-info">
+                    <h3>Ribka Mafito Mamo</h3>
+                    <p class="role">Frontend Developer</p>
+                    <p class="skills">Frontend - Python - React Native</p>
+
+                <div class="socials">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+</div>
+            <!-- Member 2 -->
+                      <div class="team-card">
+                <div class="image-wrapper">
+                    <img src="image.png" alt="Nahom Akilil Fisseha">
+                </div>
+                <div class="team-info">
+                    <h3>Nahom Akilil Fisseha</h3>
+                    <p class="role">Frontend Developer</p>
+                    <p class="skills">Frontend - JavaScript - React Native</p>
+
+                <div class="socials">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+</div>
+            <!-- Member 3 -->
+            <div class="team-card">
+                <div class="image-wrapper">
+                    <img src="image.png" alt="Leul Engdasew Agonafer">
+                </div>
+                <div class="team-info">
+                    <h3>Leul Engdasew Agonafer</h3>
+                    <p class="role">Design & Strategy</p>
+                    <p class="skills">Graphics Designer - Businessman</p>
+
+                <div class="socials">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+</div>
+        </div>
+    </div>
+</section></section>
       <section class="demo-section" id="packages"><h2>Packages</h2></section>
-      <section class="demo-section" id="contact"><h2>Contact</h2></section>
+      <section class="demo-section" id="contact">    <div class="text-item2 active">
+      <span class="tag2">GEt STARTED</span>
+      <h1>Start Your Project With AhaduHub</h1>
+      <p>
+        Choose how you want to reach us—quick chat or a structured request. We'll respond clearly and promptly.
+      </p>
+    </div>
+    <div class="container contact-layout">
+<div class="contact-list">
+    
+    <!-- Card 1: Call Us (Recommended) -->
+    <a href="tel:+123456789" class="contact-card">
+        <span class="badge">RECOMMENDED</span>
+        <div class="card-left">
+            <div class="icon-circle main-icon">
+                <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="card-text">
+                <h3>Call Us</h3>
+                <p>Book a quick 20-minute call to discuss your project and get clear direction on next steps.</p>
+            </div>
+        </div>
+        <div class="icon-circle arrow-icon">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+    </a>
+
+    <!-- Card 2: Telegram -->
+    <a href="#" class="contact-card">
+        <div class="card-left">
+            <div class="icon-circle main-icon">
+                <i class="fa-brands fa-telegram"></i>
+            </div>
+            <div class="card-text">
+                <h3>Telegram</h3>
+                <p>Chat with us directly for quick responses and project discussions.</p>
+            </div>
+        </div>
+        <div class="icon-circle arrow-icon">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+    </a>
+
+    <!-- Card 3: WhatsApp -->
+    <a href="#" class="contact-card">
+        <div class="card-left">
+            <div class="icon-circle main-icon">
+                <i class="fa-brands fa-whatsapp"></i>
+            </div>
+            <div class="card-text">
+                <h3>WhatsApp</h3>
+                <p>Reach out instantly for fast communication and easy follow-ups.</p>
+            </div>
+        </div>
+        <div class="icon-circle arrow-icon">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+    </a>
+
+    <!-- Card 4: LinkedIn -->
+    <a href="#" class="contact-card">
+        <div class="card-left">
+            <div class="icon-circle main-icon">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+            <div class="card-text">
+                <h3>LinkedIn</h3>
+                <p>Connect professionally and explore our work and experience.</p>
+            </div>
+        </div>
+        <div class="icon-circle arrow-icon">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+    </a>
+
+</div>
+<div class="contact-form-container">
+<div class="form-card">
+    <form>
+        <!-- Full Name -->
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Your full name">
+        </div>
+
+        <!-- Email Address -->
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="you@company.com">
+        </div>
+
+        <!-- Organization -->
+        <div class="form-group">
+            <label for="org">Organization / Company</label>
+            <input type="text" id="org" placeholder="Company or organization name">
+        </div>
+
+        <!-- Project Type -->
+        <div class="form-group">
+            <label for="project">Project Type</label>
+            <select id="project">
+                <option value="landing">Landing Page</option>
+                <option value="corporate">Corporate Website</option>
+                <option value="saas">SaaS Platform</option>
+            </select>
+        </div>
+
+        <!-- Message -->
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Briefly describe your project or goals"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">
+            Request a Website Audit <i class="fas fa-arrow-right"></i>
+        </button>
+
+        <p class="footer-note">We typically respond within 24 hours.</p>
+    </form>
+</div>
+</div>
+</div></section>
     </main>
     <!-- ══════════════════════════ END DEMO ═══════════════════════════ -->
 
