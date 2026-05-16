@@ -22,7 +22,7 @@ body {
 }
 
 .tag {
-    margin-top: 250px;
+    margin-top: 200px;
     display: inline-block;
     padding: 6px 16px;
     border: 1px solid #b8cdf8;
@@ -100,7 +100,7 @@ body {
     align-items: center;  /* Aligns cards to the bottom (good for overlapping heads) */
     gap: 60px;
     width: 100%;            /* Ensures container spans the whole page */
-    padding: 100px 0;       /* Space for the heads and bottom shadow */
+    padding: 50px 0;       /* Space for the heads and bottom shadow */
 }
 .team-card {
     position: relative;

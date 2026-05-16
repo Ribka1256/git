@@ -531,7 +531,7 @@ ul {
   transform: scaleX(1);
 }
 .card-top{
-  text-align: left;
+  text-align: center;
 }
 .icon{
   width: 40px;
