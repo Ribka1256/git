@@ -561,13 +561,12 @@ ul {
 }
 
 .card-container .card h3 {
-  text-align: left;
+  text-align: center;
   font-family: var(--font-sora);
   font-size: clamp(9.5px, 2vw, 18px);
   font-weight: 600;
   color: var(--text-primary);
   margin-top: 12px;
-  margin-left: 10px;
 }
 
 .card-container .card p{

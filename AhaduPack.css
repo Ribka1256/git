@@ -14,9 +14,11 @@ body {
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 80px 20px;
+     width: 100%;       /* Changed from 3000px to 100% */
+    max-width: 1200px; /* Standard readable width */
+    height: auto;      /* Changed from 1000px to prevent empty space */
+    margin: 0 auto; 
+    padding: 0 20px; 
 }
 
 /* Header */
@@ -41,8 +43,8 @@ body {
 
 /* Grid */
 .pricing-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     align-items: stretch;
 }
@@ -70,8 +72,7 @@ body {
     box-shadow: 0 10px 30px rgba(59, 130, 246, 0.08);
 }
 .tag{
-    margin-top: 200px;
-    display: inline-block;
+        display: inline-block;
     border: 1px solid #b8cdf8;
     color: #7599f3;
     border-radius: 50px; /* Pill shape */
@@ -184,10 +185,57 @@ body {
 }
 
 /* Responsive */
+/* --- Master Responsive Fix for Pricing Section --- */
+
+/* Tier 1: Large Tablets / Small Laptops (992px and below) */
 @media (max-width: 992px) {
+    .pricing-header h2 {
+        font-size: 32px !important; /* Scale down heading */
+    }
+
     .pricing-grid {
-        flex-direction: column;
-        max-width: 500px;
-        margin: 0 auto;
+        /* Switch from 3 columns to 1 column early to prevent squishing */
+        grid-template-columns: 1fr !important; 
+        justify-items: center; /* Center cards horizontally */
+        gap: 40px !important;
+    }
+
+    .pricing-card {
+        width: 100% !important;
+        /* Matches the max-width used in your Team Member cards */
+        max-width: 450px !important; 
+        height: auto !important;
+        margin: 0 auto !important;
+    }
+}
+
+/* Tier 2: Standard Mobile (768px and below) */
+@media (max-width: 768px) {
+    .pricing-section {
+        padding: 60px 0 !important;
+    }
+
+    .pricing-header {
+        margin-bottom: 40px !important;
+        text-align: left; /* Optional: Align left to match your Hero photo style */
+    }
+
+    .pricing-card {
+        padding: 30px !important; /* Slightly tighter padding for phones */
+    }
+
+    .price {
+        font-size: 40px !important; /* Scale down price text */
+    }
+}
+
+/* Tier 3: Small Phones (480px and below) */
+@media (max-width: 480px) {
+    .pricing-header h2 {
+        font-size: 28px !important;
+    }
+
+    .pricing-card {
+        max-width: 100% !important;
     }
 }
