@@ -243,14 +243,16 @@ h1 {
         display: flex !important;
         flex-direction: column !important;
         align-items: center !important;
-        gap: 140px !important; 
-        padding: 40px 0 !important;
+        gap: 150px !important; 
+        padding-top: 120px !important; /* Space for the first person's head */
         width: 100% !important;
     }
 
     .team-card {
-        width: 90% !important;
-        max-width: 380px !important;
+        width: 100% !important;
+        max-width: 400px !important; /* Keeps cards looking like cards, not wide banners */
+        margin: 0 auto !important;
+        animation: slideUp 0.6s ease forwards;
     }
 
     .team-info {
@@ -258,11 +260,37 @@ h1 {
         height: auto !important;
         padding: 40px 20px 30px !important;
         font-size: 16px !important; /* Fixed the 300px typo */
+        
     }
 
     .image-wrapper {
         width: 160px !important;
         height: 200px !important;
         margin: -100px auto 10px !important;
+        z-index: 5;
     }
+    .image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+        -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+    }
+        .team-card h3 {
+        font-size: 24px !important;
+        margin-bottom: 5px;
+    }
+    
+    .value-badges {
+        margin-bottom: 100px !important; /* Space so first card doesn't hit badges */
+    }
+}
+@media (max-width: 480px) {
+    .team-grid { gap: 130px !important; }
+    .image-wrapper { width: 140px !important; height: 180px !important; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
