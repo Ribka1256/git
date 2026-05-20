@@ -29,6 +29,7 @@
 .footer-col {
     flex: 1;
     min-width: 20px;
+    align-items: left;
 }
 
 .brand-col {

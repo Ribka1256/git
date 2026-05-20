@@ -524,20 +524,20 @@
         <!-- Value Badges -->
         <div class="value-badges">
             <div class="value-item">
-                <i class="fas fa-briefcase"></i>
-                <span>Real Project Experience</span>
+        <div class="value-icon"><i class="fas fa-briefcase"></i></div>
+                <span class="value-text">Real Project Experience</span>
             </div>
             <div class="value-item">
-                <i class="fas fa-users-cog"></i>
-                <span>Collaborative Workflow</span>
+                       <div class="value-icon"><i class="fas fa-user-group"></i></div>
+                <span class="value-text">Collaborative Workflow</span>
             </div>
             <div class="value-item">
-                <i class="fas fa-laptop-code"></i>
-                <span>Modern Tech Stack</span>
+        <div class="value-icon"><i class="fas fa-layer-group"></i></div>
+                <span class="value-text">Modern Tech Stack</span>
             </div>
             <div class="value-item">
-                <i class="fas fa-shield-alt"></i>
-                <span>Reliable Delivery</span>
+                      <div class="value-icon"><i class="far fa-clock"></i></div>
+                <span class="value-text">Reliable Delivery</span>
             </div>
         </div>
 
@@ -600,7 +600,7 @@
         </div>
     </div>
 </section></section>
-<section class="demo-section" id="packages" class="demo-hero" class="pricing-section">
+<section class="demo-section demo-hero" id="packages" class="demo-hero" class="pricing-section">
     <div class="container">
         <!-- Header -->
         <div class="pricing-header">
@@ -756,26 +756,29 @@
     <form>
         <!-- Full Name -->
         <div class="form-group">
+            <input type="text" id="name" placeholder="Your full name" required>
             <label for="name">Full Name</label>
-            <input type="text" id="name" placeholder="Your full name">
+
         </div>
 
         <!-- Email Address -->
         <div class="form-group">
+           <input type="email" id="email" placeholder="you@company.com" required>
             <label for="email">Email</label>
-            <input type="email" id="email" placeholder="you@company.com">
+           
         </div>
 
         <!-- Organization -->
         <div class="form-group">
+          <input type="text" id="org" placeholder="Company or organization name" required>
             <label for="org">Organization</label>
-            <input type="text" id="org" placeholder="Company or organization name">
+            
         </div>
 
         <!-- Project Type -->
         <div class="form-group">
             <label for="project">Project</label>
-            <select id="project">
+            <select id="project" required>
                 <option value="landing">Landing Page</option>
                 <option value="corporate">Corporate Website</option>
                 <option value="saas">SaaS Platform</option>
@@ -785,7 +788,7 @@
         <!-- Message -->
         <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" placeholder="Briefly describe your project or goals"></textarea>
+            <textarea id="message" placeholder="Briefly describe your project or goals" required></textarea>
         </div>
 
         <!-- Submit Button -->
@@ -818,13 +821,12 @@
         <div class="footer-col">
             <h4>Quick Links</h4>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Process</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#packages">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
 
@@ -843,7 +845,7 @@
         <div class="footer-col contact-col">
             <h4>Contact</h4>
             <div class="contact-item">
-                <div class="icon-sm"><i class="fas fa-phone-alt"></i></div>
+                <div class="icon-sm"><i class="fas fa-phone"></i></div>
                 <span>+251 000 000 000</span>
             </div>
             <div class="contact-item">

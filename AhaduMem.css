@@ -13,7 +13,7 @@ body {
 
 .container {
      width: 100%;       /* Changed from 3000px to 100% */
-    max-width: 1200px; /* Standard readable width */
+    max-width: 1500px; /* Standard readable width */
     height: auto;      /* Changed from 1000px to prevent empty space */
     margin: 0 auto; 
     padding: 0 20px; 
@@ -23,10 +23,13 @@ body {
 .team-header {
     text-align: center;
     margin-bottom: 50px;
+     margin-top: 10px;
+
+
 }
 
 .tag {
-    margin-top: 200px;
+    margin-top: 150px;
     display: inline-block;
     padding: 6px 16px;
     border: 1px solid #b8cdf8;
@@ -57,17 +60,18 @@ body {
 /* Value Badges Row */
 .value-badges {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 35px;
-    margin-bottom: 120px;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Space between cards */
+    max-width: 800px; /* Limits width on big screens */
+    margin: 40px auto;
 }
+
 
 .value-item {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 25px 30px;
+    padding: 15px 20px;
     border: 1px solid var(--card-border);
     border-radius: 10px;
     color: var(--text-dark);
@@ -76,25 +80,39 @@ body {
     transition: 0.3s;
     background: white;
 }
+.value-icon {
+    color: var(--primary-blue);
+    font-size: 18px;
+    background-color: #eff6ff;
+    padding: 8px;
+    border-radius: 50%;}
 .value-item:hover { opacity: 0.4; transform: scale(0.98); }
 .value-item:hover {
     opacity: 1;
     transform: translateY(-12px) scale(1.02);
+    background-color: #4a7cfe;
+    color: white;
     border-color: var(--primary-blue);
     box-shadow: 0 40px 50px rgba(0, 0, 0, 0.1);
     z-index: 10;
 }
 
-.value-item i {
+ .value-badges .value-item i {
     color: var(--primary-blue);
     font-size: 18px;
     background-color: #eff6ff;
 }
-
-
+.value-badges .value-item :hover {
+    color: white;
+    transition: 0.3s;
+}
+.value-text{
+   font-family:  Verdana, Geneva, Tahoma, sans-serif;
+}
 .value-item:hover {
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-    border-color: #d1e0ff;
+    background-color: var(--primary-blue);
+    color:white;
 }
 h1 {
     font-family: var(--font-sora);
@@ -106,35 +124,41 @@ h1 {
 }
 /* Team Grid */
 .team-grid {
-    display: inline-flex;          /* Changed from inline-flex */
-    justify-content: center; /* Centers cards horizontally */
-    align-items: center;  /* Aligns cards to the bottom (good for overlapping heads) */
-    gap: 60px;
-    width: 100%;            /* Ensures container spans the whole page */
-    padding: 50px 0;       /* Space for the heads and bottom shadow */
+display: flex;
+    flex-direction: row;      /* Side-by-side by default */
+    flex-wrap: wrap;          /* Allows wrapping if screen gets too narrow */
+    justify-content: center; 
+    align-items: flex-start;  /* Align to top so heads line up */
+    gap: 30px;
+    width: 100%;
+    padding: 100px 0 50px;    /* Top padding for overlapping heads */      /* Space for the heads and bottom shadow */
 }
 .team-card {
     position: relative;
     transition: 0.4s ease;
-   border: 1px solid var(--card-border);
+    border: 1px solid var(--card-border);
     border-radius: 30px;
-    gap:60px;
-     align-items:left;
+    /* FIX: Give the card a flexible width on desktop */
+    width: calc(33.33% - 40px); 
+    min-width: 300px;         /* Prevents cards from getting too skinny */
+    max-width: 500px;
+    text-align: center;
 }
 .team-info {
-   background: white;
-    /* Matched to photo */
+    background: white;
     padding: 30px 20px;
     display: flex;
-    height: 200px;
-    width: 400px;
-    border-radius: 0px;
     flex-direction: column;
     align-items: center;
-    font-weight:100;
-    font-size: 300px;
+    border-radius: 0 0 30px 30px; /* Rounded bottom corners */
+    /* FIX: Removed fixed width 400px and height 200px */
+    width: 100%; 
+    height: auto; 
     transition: 0.3s;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+.team-info p {
+    font-size: 15px; 
 }
 .team-card:hover { opacity: 0.4; transform: scale(0.98); }
 .team-card:hover {
@@ -240,34 +264,28 @@ h1 {
 
     /* Ensure the grid stacks vertically at 772px */
     .team-grid {
-        display: flex !important;
-        flex-direction: column !important;
+        flex-direction: column !important; /* Stack vertically */
         align-items: center !important;
-        gap: 150px !important; 
-        padding-top: 120px !important; /* Space for the first person's head */
-        width: 100% !important;
+        gap: 120px !important;            /* Space for floating heads */
+        padding-top: 100px !important;
     }
 
     .team-card {
-        width: 100% !important;
-        max-width: 400px !important; /* Keeps cards looking like cards, not wide banners */
-        margin: 0 auto !important;
-        animation: slideUp 0.6s ease forwards;
+        width: 90% !important;            /* Take up most of the screen width */
+        max-width: 450px !important;
+        margin: 0 auto;
     }
 
     .team-info {
         width: 100% !important;
         height: auto !important;
-        padding: 40px 20px 30px !important;
-        font-size: 16px !important; /* Fixed the 300px typo */
-        
+        padding-top: 40px !important;     /* Extra space for the image overlap */
     }
 
     .image-wrapper {
         width: 160px !important;
-        height: 200px !important;
-        margin: -100px auto 10px !important;
-        z-index: 5;
+        height: 220px !important;
+        margin: -110px auto 10px !important;
     }
     .image-wrapper img {
         width: 100%;
@@ -282,7 +300,8 @@ h1 {
     }
     
     .value-badges {
-        margin-bottom: 100px !important; /* Space so first card doesn't hit badges */
+        margin-bottom: 100px !important;
+        display: grid; /* Space so first card doesn't hit badges */
     }
 }
 @media (max-width: 480px) {

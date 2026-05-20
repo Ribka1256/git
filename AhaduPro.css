@@ -214,5 +214,5 @@ margin-bottom: 10px;
 /* Mobile */
 @media (max-width: 768px) {
     .project-card { width: 85vw; padding: 30px; height: auto; }
-    .swiper-wrapper { gap: 20px; }
+    .swiper-wrapper { gap: 20px; padding: 0px 30px;}
 }

@@ -26,6 +26,10 @@
 .contact-form-container{
     flex: 10; /* Takes 50% width */
     max-width: 1700px;
+      margin-top:40px;
+  flex-direction: column;
+    display: inline-flex;
+    grid-template-columns: repeat(3, 1fr);
 }
 .contact-layout {
     max-width: 2000px;
@@ -87,7 +91,7 @@
 .main-icon {
     width: 60px;
     height: 60px;
-    background: var(--bg-white);
+    background:  #eff6ff;;
     color: var(--brand-blue);
     font-size: 22px;
 }
@@ -111,16 +115,20 @@
     background: var(--brand-blue);
     border-color: var(--brand-blue);
     color: #ffffff;
+    transition:  all 0.8s ease;
 }
 .contact-card:hover .main-icon {
     background: var(--brand-blue);
     border-color: var(--brand-blue);
     color: #ffffff;
+    transition:  all 0.8s ease;
 }
-
+.tag2{
+    margin-top: 120px;
+}
 /* Text Content */
 .card-text h3 {
-font-size: 24px; line-height: 1.2; margin-bottom: 5px; font-weight: 400; }
+font-size: 20px; line-height: 1.2; margin-bottom: 5px; font-weight: 600; }
 
 
 .card-text p {
@@ -132,77 +140,99 @@ font-size: 24px; line-height: 1.2; margin-bottom: 5px; font-weight: 400; }
 /* Responsive */
 
 /* Card Container */
+/* --- Form Card Container --- */
 .form-card {
-    background: var(--bg-white);
+    background: #ffffff;
     width: 100%;
     max-width: 700px;
-    margin-top: 40px;
-    padding: 50px;
+    padding: 40px;
     border-radius: 30px;
     border: 1px solid var(--brand-blue-dk);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
 }
-.tag2{
-      margin-top: 250px;
-}
 
-/* Form Groups */
+/* --- Form Group Positioning --- */
 .form-group {
-    margin-bottom: 24px;
+    position: relative;
+    margin-bottom: 25px;
 }
 
-/* Labels: Small, Gray, Uppercase */
-label {
-    display: block;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--text-input);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-}
-
-/* Inputs, Select, Textarea */
-input, select, textarea {
+/* --- Input & Textarea Styling --- */
+.form-group input, 
+.form-group textarea, 
+.form-group select {
     width: 100%;
     padding: 14px 18px;
     font-size: 15px;
-    border: 1px solid var(--text-secondary);
+    border: 1px solid #d1d5db; /* Default subtle border */
     border-radius: 12px;
-    color: var(--text-input);
-    background-color: #fff;
-    box-sizing: border-box;
+    color: var(--text-primary);
+    background-color: transparent;
     outline: none;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
 }
 
-input::placeholder, textarea::placeholder {
-    color: var(--border-color);
+/* Hide default placeholder text until focus, or make it very light */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: transparent; /* This makes the floating label the primary focus */
+    transition: color 0.3s ease;
 }
 
-/* Focus States */
+.form-group input:focus::placeholder,
+.form-group textarea:focus::placeholder {
+    color: #a3a3a3; /* Show placeholder only when user clicks in */
+}
 
-input:focus+label, input:valid+label{
-    top: -8px;
+/* --- Floating Label Logic (Name, Email, Org) --- */
+.form-group label {
+    position: absolute;
+    left: 15px;
+    top: 14px;
+    padding: 0 6px;
+    color: #64748b;
+    font-size: 15px;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: white; /* Matches card background to 'cut' the border */
+}
+
+/* The Animation Trigger */
+/* When input is focused OR has text (is not showing placeholder) */
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 12px;
     font-size: 12px;
-    color: var(--primary-blue);
-}
-textarea {
-    height: 120px;
-    resize: none;
+    font-weight: 600;
+    color: var(--brand-blue);
 }
 
-/* Select Styling */
-select {
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23475569'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 18px center;
-    background-size: 16px;
-    cursor: pointer;
+/* --- Fixed Label Logic (Project & Message) --- */
+/* Since Label is BEFORE Select/Textarea in your HTML, we style them as standard top-labels */
+.form-group label[for="project"],
+.form-group label[for="message"] {
+    position: relative;
+    display: block;
+    top: 0;
+    left: 0;
+    margin-bottom: 8px;
+    padding: 0;
+    font-size: 12px;
+    font-weight: 600;
+    background: transparent;
+    color: #64748b;
 }
 
-/* Submit Button */
+/* --- Focus States --- */
+.form-group input:focus, 
+.form-group textarea:focus, 
+.form-group select:focus {
+    border-color: var(--brand-blue);
+    box-shadow: 0 0 0 4px rgba(30, 107, 255, 0.1);
+}
+
+/* --- Submit Button & Note --- */
 .submit-btn {
     width: 100%;
     padding: 16px;
@@ -211,30 +241,25 @@ select {
     font-size: 16px;
     font-weight: 600;
     border: none;
-    border-radius: 50px; /* Pill shape */
+    border-radius: 50px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-    margin-top: 10px;
+    transition: all 0.3s ease;
 }
 
 .submit-btn:hover {
-    background-color: #1d4ed8;
+    background-color: var(--brand-blue-dk);
+    transform: translateY(-2px);
 }
 
-.submit-btn:active {
-    transform: scale(0.98);
-}
-
-/* Footer Note */
 .footer-note {
     text-align: center;
     font-size: 13px;
     color: #64748b;
-    margin-top: 25px;
+    margin-top: 20px;
 }
 @media (max-width: 992px) {
     /* 1. Fix for the About Section Boxes (Wear Your Story, etc.) */
@@ -245,14 +270,14 @@ select {
     }
 
     .contact-list {
-        width: 95% !important; /* Makes boxes take up full screen width */
+        width: 100% !important; /* Makes boxes take up full screen width */
         max-width: 100% !important;
         height: auto !important; /* Allows box to grow with text */
         margin: 10px auto;
         overflow: visible; /* Prevents text from being cut off */
     }
      .contact-form-container {
-        width: 95% !important; /* Makes boxes take up full screen width */
+        width: 100% !important; /* Makes boxes take up full screen width */
         max-width: 100% !important;
         height: auto !important; /* Allows box to grow with text */
         margin: 10px auto;
